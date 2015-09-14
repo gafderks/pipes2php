@@ -13,6 +13,6 @@
         }
     ],
     "require": {
-        "slim/slim": "3.0.*"
+        "slim/slim": "^2.6"
     }
 }
