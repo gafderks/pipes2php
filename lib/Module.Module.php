@@ -5,7 +5,7 @@ namespace Module;
 
 interface Module {
     
-    public function in(SimpleXMLElement $in);
+    public function in(\SimpleXMLElement $in);
     
     public function out();
     

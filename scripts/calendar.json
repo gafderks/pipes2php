@@ -1,0 +1,318 @@
+{
+    "layout": [{
+        "id": "sw-57",
+        "xy": [178, 85]
+    }, {
+        "id": "_OUTPUT",
+        "xy": [1071, 802]
+    }, {
+        "id": "sw-79",
+        "xy": [200, 170]
+    }, {
+        "id": "sw-184",
+        "xy": [1044, 648]
+    }, {
+        "id": "sw-170",
+        "xy": [349, 570]
+    }],
+    "modules": [{
+        "type": "fetch",
+        "id": "sw-57",
+        "conf": {
+            "URL": {
+                "value": "https://www.google.com/calendar/feeds/im9dkimg71lmvd5iu0461fkkcs%40group.calendar.google.com/public/basic?futureevents=true&orderby=starttime&sortorder=a&language=nl_NL&country=NL&singleevents=true&hl=nl",
+                "type": "url"
+            }
+        }
+    }, {
+        "type": "output",
+        "id": "_OUTPUT",
+        "conf": {}
+    }, {
+        "type": "regex",
+        "id": "sw-79",
+        "conf": {
+            "RULE": [{
+                "field": {
+                    "value": "description",
+                    "type": "text"
+                },
+                "match": {
+                    "value": "Status van afspraak: .*",
+                    "type": "text"
+                },
+                "replace": {
+                    "value": "",
+                    "type": "text"
+                }
+            }, {
+                "field": {
+                    "value": "description",
+                    "type": "text"
+                },
+                "match": {
+                    "value": "Wie: .*",
+                    "type": "text"
+                },
+                "replace": {
+                    "value": "",
+                    "type": "text"
+                }
+            }, {
+                "field": {
+                    "value": "description",
+                    "type": "text"
+                },
+                "match": {
+                    "value": "Beschrijving van afspraak: .*",
+                    "type": "text"
+                },
+                "replace": {
+                    "value": "",
+                    "type": "text"
+                }
+            }, {
+                "field": {
+                    "value": "description",
+                    "type": "text"
+                },
+                "match": {
+                    "value": "<br />",
+                    "type": "text"
+                },
+                "replace": {
+                    "value": " ",
+                    "type": "text"
+                },
+                "globalmatch": {
+                    "type": "text",
+                    "value": "1"
+                },
+                "multilinematch": {
+                    "type": "text",
+                    "value": "4"
+                }
+            }, {
+                "field": {
+                    "value": "description",
+                    "type": "text"
+                },
+                "match": {
+                    "value": "\\r",
+                    "type": "text"
+                },
+                "replace": {
+                    "value": "",
+                    "type": "text"
+                },
+                "globalmatch": {
+                    "type": "text",
+                    "value": "1"
+                },
+                "multilinematch": {
+                    "type": "text",
+                    "value": "4"
+                }
+            }, {
+                "field": {
+                    "value": "description",
+                    "type": "text"
+                },
+                "match": {
+                    "value": "\\n",
+                    "type": "text"
+                },
+                "replace": {
+                    "value": "",
+                    "type": "text"
+                },
+                "globalmatch": {
+                    "type": "text",
+                    "value": "1"
+                },
+                "multilinematch": {
+                    "type": "text",
+                    "value": "4"
+                }
+            }, {
+                "field": {
+                    "value": "description",
+                    "type": "text"
+                },
+                "match": {
+                    "value": "CET",
+                    "type": "text"
+                },
+                "replace": {
+                    "value": "",
+                    "type": "text"
+                },
+                "globalmatch": {
+                    "type": "text",
+                    "value": "1"
+                }
+            }, {
+                "field": {
+                    "value": "description",
+                    "type": "text"
+                },
+                "match": {
+                    "value": "(\\d)\\.",
+                    "type": "text"
+                },
+                "replace": {
+                    "value": "$1",
+                    "type": "text"
+                },
+                "globalmatch": {
+                    "type": "text",
+                    "value": "1"
+                }
+            }, {
+                "field": {
+                    "value": "title",
+                    "type": "text"
+                },
+                "match": {
+                    "value": "Verk: ",
+                    "type": "text"
+                },
+                "replace": {
+                    "value": "",
+                    "type": "text"
+                }
+            }, {
+                "field": {
+                    "value": "description",
+                    "type": "text"
+                },
+                "match": {
+                    "value": "CEST",
+                    "type": "text"
+                },
+                "replace": {
+                    "value": "",
+                    "type": "text"
+                },
+                "globalmatch": {
+                    "type": "text",
+                    "value": "1"
+                }
+            }]
+        }
+    }, {
+        "type": "rename",
+        "id": "sw-184",
+        "conf": {
+            "RULE": [{
+                "field": {
+                    "value": "description",
+                    "type": "text"
+                },
+                "op": {
+                    "type": "text",
+                    "value": "copy"
+                },
+                "newval": {
+                    "value": "summary.content",
+                    "type": "text"
+                }
+            }, {
+                "field": {
+                    "value": "description",
+                    "type": "text"
+                },
+                "op": {
+                    "type": "text",
+                    "value": "copy"
+                },
+                "newval": {
+                    "value": "content.content",
+                    "type": "text"
+                }
+            }]
+        }
+    }, {
+        "type": "regex",
+        "id": "sw-170",
+        "conf": {
+            "RULE": [{
+                "field": {
+                    "value": "description",
+                    "type": "text"
+                },
+                "match": {
+                    "value": "Wanneer: ",
+                    "type": "text"
+                },
+                "replace": {
+                    "value": "",
+                    "type": "text"
+                },
+                "globalmatch": {
+                    "type": "text",
+                    "value": "1"
+                }
+            }, {
+                "field": {
+                    "value": "description",
+                    "type": "text"
+                },
+                "match": {
+                    "value": "Waar:",
+                    "type": "text"
+                },
+                "replace": {
+                    "value": "<br>Waar:",
+                    "type": "text"
+                },
+                "globalmatch": {
+                    "type": "text",
+                    "value": "1"
+                }
+            }]
+        }
+    }],
+    "terminaldata": [],
+    "wires": [{
+        "id": "_w0",
+        "src": {
+            "id": "_OUTPUT",
+            "moduleid": "sw-57"
+        },
+        "tgt": {
+            "id": "_INPUT",
+            "moduleid": "sw-79"
+        }
+    }, {
+        "id": "_w6",
+        "src": {
+            "id": "_OUTPUT",
+            "moduleid": "sw-79"
+        },
+        "tgt": {
+            "id": "_INPUT",
+            "moduleid": "sw-170"
+        }
+    }, {
+        "id": "_w2",
+        "src": {
+            "id": "_OUTPUT",
+            "moduleid": "sw-184"
+        },
+        "tgt": {
+            "id": "_INPUT",
+            "moduleid": "_OUTPUT"
+        }
+    }, {
+        "id": "_w4",
+        "src": {
+            "id": "_OUTPUT",
+            "moduleid": "sw-170"
+        },
+        "tgt": {
+            "id": "_INPUT",
+            "moduleid": "sw-184"
+        }
+    }]
+}
