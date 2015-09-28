@@ -23,6 +23,8 @@ $app->get("/:pipe", function($pipe) use ($app) {
         $app->notFound();
         die();
     }
+    // define content-type
+    $app->response->headers->set('Content-Type', 'application/xml');
     
     // retrieve definition
     $pipeDefinition = json_decode(file_get_contents(SCRIPT_DIR . $pipeName . ".json"));
@@ -32,9 +34,6 @@ $app->get("/:pipe", function($pipe) use ($app) {
     
     // run evaluator
     $result = $ev->evaluate();
-    
-    // define content-type
-    header('Content-type: application/xml');
     
     // format result
     $dom = new DOMDocument("1.0");
