@@ -12,10 +12,12 @@ $app = new \Slim\Slim();
 /**
  * 
  */
-$app->get("/:pipe", function($pipe) use ($app) {
+$app->get("/:pipe+", function($pipe) use ($app) {
     
     // escape pipe name
-    $pipeName = preg_replace('/[^A-Za-z0-9_\-]/', '_', $pipe);
+    $pipeNameArray = preg_replace("/[^A-Za-z0-9_\-]/", "_", $pipe);
+    
+    $pipeName = implode(DIRECTORY_SEPARATOR, $pipeNameArray);
     
     // check if pipe definition exists
     if (!file_exists(SCRIPT_DIR . $pipeName . ".json")) {

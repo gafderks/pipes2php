@@ -1,0 +1,72 @@
+{
+  "pipe":{
+    "title":"Calendar General",
+    "modules":[
+      {
+        "type":"FetchFeed",
+        "id":1,
+        "conf":{
+          "URL":"http://descouting.nl/index.php/verkenner-ledenportaal-introductie/logboek?format=feed&type=atom"
+        }
+      },
+      {
+        "type":"Filter",
+        "id":2,
+        "conf":{
+          "mode": "permit",
+          "combine": "and",
+          "rules":[
+            {
+              "field":"published",
+              "op":"before",
+              "value":"7 days ago"
+            }
+          ]
+        }
+      },
+      {
+        "type":"Output",
+        "id":3,
+        "conf":{
+
+        }
+      },
+      {
+        "type":"Truncate",
+        "id":4,
+        "conf":{
+            "count": 5
+        }
+      }
+    ],
+    "wires":[
+      {
+        "id":0,
+        "src":{
+          "module":1
+        },
+        "tgt":{
+          "module":2
+        }
+      },
+      {
+        "id":1,
+        "src":{
+          "module":2
+        },
+        "tgt":{
+          "module":4
+        }
+      },
+      {
+        "id":2,
+        "src":{
+          "module":4
+        },
+        "tgt":{
+          "module":3
+        }
+      }
+    ]
+  }
+}
