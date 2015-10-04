@@ -4,8 +4,48 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "15c63bc4d7131b7199eadbc76f7ed262",
+    "hash": "38269f50fe3db7aee2ed637555dcb817",
     "packages": [
+        {
+            "name": "johngrogg/ics-parser",
+            "version": "v1.0.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/johngrogg/ics-parser.git",
+                "reference": "4d4fbd147e4dac78f8b34b66d3380edefb9f2c4b"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/johngrogg/ics-parser/zipball/4d4fbd147e4dac78f8b34b66d3380edefb9f2c4b",
+                "reference": "4d4fbd147e4dac78f8b34b66d3380edefb9f2c4b",
+                "shasum": ""
+            },
+            "type": "library",
+            "autoload": {
+                "classmap": [
+                    "class.iCalReader.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "authors": [
+                {
+                    "name": "Martin Thoma",
+                    "email": "info@martin-thoma.de",
+                    "role": "Original Developer"
+                },
+                {
+                    "name": "John Grogg",
+                    "email": "john.grogg@gmail.com",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Ics file parser",
+            "keywords": [
+                "ical",
+                "ics"
+            ],
+            "time": "2015-04-21 22:49:49"
+        },
         {
             "name": "slim/slim",
             "version": "2.6.2",

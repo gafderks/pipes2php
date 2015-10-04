@@ -1,10 +1,15 @@
 {
     "name": "gafderks/pipes2php",
     "description": "",
+    "keywords": ["pipes", "yahoo"],
+    "homepage": "https://github.com/gafderks/pipes2php",
     "license": "MIT",
-    "keywords": [
-        "pipes",
-        "yahoo"
+    "authors": [
+        {
+            "name": "Geert Derks",
+            "email": "g.m.w.derks@home.nl",
+            "role": "Developer"
+        }
     ],
     "repositories": [
         {
@@ -13,6 +18,8 @@
         }
     ],
     "require": {
-        "slim/slim": "^2.6"
+        "php": ">=5.3.0",
+        "slim/slim": "^2.6",
+        "johngrogg/ics-parser": "^1.0"
     }
 }
