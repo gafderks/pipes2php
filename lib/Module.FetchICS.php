@@ -56,7 +56,7 @@ class FetchICS implements \Module\Module {
             $xml->registerXPathNamespace($strPrefix, $strNamespace);
         }
         
-        $ical = new \Common\ICal($this->conf->URL);
+        $ical = new \ICal($this->conf->URL);
         $events = $ical->events();
         
         

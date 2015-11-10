@@ -4,7 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "38269f50fe3db7aee2ed637555dcb817",
+    "hash": "c3ad67911675bb0a036b0b5fabcdd54c",
+    "content-hash": "f170f0ae6cab09393b58f8cbfaa571cc",
     "packages": [
         {
             "name": "johngrogg/ics-parser",
@@ -99,6 +100,8 @@
     "stability-flags": [],
     "prefer-stable": false,
     "prefer-lowest": false,
-    "platform": [],
+    "platform": {
+        "php": ">=5.3.0"
+    },
     "platform-dev": []
 }
