@@ -13,7 +13,9 @@
           ],
           "days": [
             "Ma", "Di", "Wo", "Do", "Vr", "Za", "Zo"
-          ]
+          ],
+          "date": "D j M Y",
+          "time": "G:i"
         }
       },
       {
