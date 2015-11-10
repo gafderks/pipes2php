@@ -80,9 +80,9 @@ class FetchICS implements \Module\Module {
         $startDay = date("D j M Y", $start);
         $endDay = date("D j M Y", $end);
         if ($startDay == $endDay) {
-            $friendly = date("D j M Y G:i T", $start)." - ".date("G:i T", $end);
+            $friendly = date("D j M Y G:i", $start)." - ".date("G:i", $end);
         } else {
-            $friendly = date("D j M Y G:i T", $start)." - ".date("D j M Y G:i T", $end);
+            $friendly = date("D j M Y G:i", $start)." - ".date("D j M Y G:i", $end);
         }
         
         $search  = array('Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun', 'Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec');
