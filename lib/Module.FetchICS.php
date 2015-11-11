@@ -19,6 +19,7 @@ class FetchICS implements \Module\Module {
     public function __construct($id, $conf) {
         $this->id = $id;
         $this->conf = $conf;
+        date_default_timezone_set($this->conf->timezone);
     }
     
     /**

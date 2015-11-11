@@ -1,6 +1,17 @@
 <?php
 // /lib/Module.RegEx.php
 
+/**
+ * This PHP class should only read an iCal file (*.ics), parse it and return an
+ * array with its content.
+ *
+ * PHP Version 5
+ * 
+ * @author   Geert Derks <g.m.w.derks@home.nl>
+ * @license  http://www.opensource.org/licenses/mit-license.php MIT License
+ * @link     https://github.com/gafderks/pipes2php
+ */
+
 namespace Module;
 
 /**

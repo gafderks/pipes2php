@@ -8,14 +8,15 @@
         "conf":{
           "URL":"https://calendar.google.com/calendar/ical/im9dkimg71lmvd5iu0461fkkcs%40group.calendar.google.com/public/basic.ics",
           "title":"Verkenners",
-          "months": [
+          "months":[
             "jan", "feb", "mrt", "apr", "mei", "jun", "jul", "aug", "sep", "okt", "nov", "dec"
           ],
-          "days": [
+          "days":[
             "Ma", "Di", "Wo", "Do", "Vr", "Za", "Zo"
           ],
-          "date": "D j M Y",
-          "time": "G:i"
+          "date":"D j M Y",
+          "time":"G:i",
+          "timezone":"Europe/Amsterdam"
         }
       },
       {
