@@ -64,6 +64,7 @@ class FetchICS implements \Module\Module {
         // insert events into template
         foreach ($events as $event) {
             $entry = $xml->addChild("entry");
+            //$entry->addChild("id", @$event['UID']);
             $entry->addChild("published", date("c", strtotime(@$event['CREATED'])));
             $entry->addChild("updated", date("c", strtotime(@$event['LAST-MODIFIED'])));
             $entry->addChild("start", date("c", strtotime(@$event['DTSTART'])));
@@ -114,7 +115,7 @@ class FetchICS implements \Module\Module {
   <openSearch:totalResults>13</openSearch:totalResults>
   <openSearch:startIndex>1</openSearch:startIndex>
   <openSearch:itemsPerPage>25</openSearch:itemsPerPage>
-  <gCal:timezone value="Europe/Amsterdam"/>
+  <gCal:timezone value="{$this->conf->timezone}"/>
   <gCal:timesCleaned value="0"/>
   <gd:where valueString="Dongen, Nederland"/>
 
