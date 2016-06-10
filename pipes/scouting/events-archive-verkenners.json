@@ -6,7 +6,7 @@
         "type":"FetchFeed",
         "id":1,
         "conf":{
-          "URL":"http://descouting.nl/index.php/verkenner-ledenportaal-introductie/logboek?format=feed&type=atom"
+          "URL":"http://verkenners.descouting.nl/category/fotos/feed/atom/"
         }
       },
       {

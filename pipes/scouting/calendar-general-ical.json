@@ -7,7 +7,7 @@
         "id":1,
         "conf":{
           "URL":"https://calendar.google.com/calendar/ical/agenda%40descouting.nl/public/basic.ics",
-          "title":"Verkenners",
+          "title":"Algemeen Agenda",
           "months":[
             "jan", "feb", "mrt", "apr", "mei", "jun", "jul", "aug", "sep", "okt", "nov", "dec"
           ],
