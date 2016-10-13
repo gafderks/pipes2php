@@ -9,16 +9,16 @@
     "packages": [
         {
             "name": "johngrogg/ics-parser",
-            "version": "v1.0.2",
+            "version": "1.0.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/johngrogg/ics-parser.git",
-                "reference": "4d4fbd147e4dac78f8b34b66d3380edefb9f2c4b"
+                "reference": "d5f44fe7e633ab81ebb07c9a637877becf50cb41"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/johngrogg/ics-parser/zipball/4d4fbd147e4dac78f8b34b66d3380edefb9f2c4b",
-                "reference": "4d4fbd147e4dac78f8b34b66d3380edefb9f2c4b",
+                "url": "https://api.github.com/repos/johngrogg/ics-parser/zipball/d5f44fe7e633ab81ebb07c9a637877becf50cb41",
+                "reference": "d5f44fe7e633ab81ebb07c9a637877becf50cb41",
                 "shasum": ""
             },
             "type": "library",
@@ -45,7 +45,7 @@
                 "ical",
                 "ics"
             ],
-            "time": "2015-04-21 22:49:49"
+            "time": "2016-08-20 19:07:35"
         },
         {
             "name": "slim/slim",
