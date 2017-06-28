@@ -57,23 +57,29 @@ class FetchICS implements \Module\Module {
             $xml->registerXPathNamespace($strPrefix, $strNamespace);
         }
         
-        $ical = new \ICal($this->conf->URL);
-        $events = $ical->events();
-        
+        try {
+            $ical = new \ICal\ICal(false, [
+                'defaultWeekStart' => 'MO'
+            ]);
+            $ical->initUrl($this->conf->URL);
+            $events = $ical->events();
+        } catch (\Exception $e) {
+            die($e);
+        }
         
         // insert events into template
         foreach ($events as $event) {
             $entry = $xml->addChild("entry");
             //$entry->addChild("id", @$event['UID']);
-            $entry->addChild("published", date("c", strtotime(@$event['CREATED'])));
-            $entry->addChild("updated", date("c", strtotime(@$event['LAST-MODIFIED'])));
-            $entry->addChild("start", date("c", strtotime(@$event['DTSTART'])));
-            $entry->addChild("end", date("c", strtotime(@$event['DTEND'])));
-            $entry->addChild("title", $this->unescape(@$event['SUMMARY']));
-            $entry->addChild("content", $this->getFriendlyDescription(strtotime($event['DTSTART']), strtotime
-            ($event['DTEND']), $this->unescape(@$event['LOCATION'])));
-            $entry->addChild("summary", $this->getFriendlyDescription(strtotime($event['DTSTART']), strtotime
-            ($event['DTEND']), $this->unescape(@$event['LOCATION'])));
+            $entry->addChild("published", date("c", strtotime($event->created)));
+            $entry->addChild("updated", date("c", strtotime($event->last_modified)));
+            $entry->addChild("start", date("c", strtotime($event->dtstart)));
+            $entry->addChild("end", date("c", strtotime($event->dtend)));
+            $entry->addChild("title", $this->unescape($event->summary));
+            $entry->addChild("content", $this->getFriendlyDescription(strtotime($event->dtstart), strtotime
+            ($event->dtend), $this->unescape($event->location)));
+            $entry->addChild("summary", $this->getFriendlyDescription(strtotime($event->dtstart), strtotime
+            ($event->dtend), $this->unescape($event->location)));
         }
         
         return $xml;

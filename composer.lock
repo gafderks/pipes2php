@@ -4,30 +4,38 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "c3ad67911675bb0a036b0b5fabcdd54c",
-    "content-hash": "f170f0ae6cab09393b58f8cbfaa571cc",
+    "content-hash": "be221b56068685ee2d77c4d3bbbe05b3",
     "packages": [
         {
             "name": "johngrogg/ics-parser",
-            "version": "1.0.4",
+            "version": "v2.0.6",
             "source": {
                 "type": "git",
-                "url": "https://github.com/johngrogg/ics-parser.git",
-                "reference": "d5f44fe7e633ab81ebb07c9a637877becf50cb41"
+                "url": "https://github.com/u01jmg3/ics-parser.git",
+                "reference": "2c9882b6d9408d1adaa7015f8ac88da2d42e2802"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/johngrogg/ics-parser/zipball/d5f44fe7e633ab81ebb07c9a637877becf50cb41",
-                "reference": "d5f44fe7e633ab81ebb07c9a637877becf50cb41",
+                "url": "https://api.github.com/repos/u01jmg3/ics-parser/zipball/2c9882b6d9408d1adaa7015f8ac88da2d42e2802",
+                "reference": "2c9882b6d9408d1adaa7015f8ac88da2d42e2802",
                 "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.0"
+            },
+            "require-dev": {
+                "squizlabs/php_codesniffer": "^2.5"
             },
             "type": "library",
             "autoload": {
-                "classmap": [
-                    "class.iCalReader.php"
-                ]
+                "psr-0": {
+                    "ICal": "src/"
+                }
             },
             "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
             "authors": [
                 {
                     "name": "Martin Thoma",
@@ -37,15 +45,24 @@
                 {
                     "name": "John Grogg",
                     "email": "john.grogg@gmail.com",
-                    "role": "Developer"
+                    "role": "Developer/Prior Owner"
+                },
+                {
+                    "name": "Jonathan Goode",
+                    "role": "Developer/Owner"
                 }
             ],
-            "description": "Ics file parser",
+            "description": "ICS Parser",
+            "homepage": "https://github.com/u01jmg3/ics-parser",
             "keywords": [
+                "iCalendar",
                 "ical",
-                "ics"
+                "ical-parser",
+                "ics",
+                "ics-parser",
+                "ifb"
             ],
-            "time": "2016-08-20 19:07:35"
+            "time": "2017-06-12T17:48:27+00:00"
         },
         {
             "name": "slim/slim",
@@ -91,7 +108,7 @@
                 "rest",
                 "router"
             ],
-            "time": "2015-03-08 18:41:17"
+            "time": "2015-03-08T18:41:17+00:00"
         }
     ],
     "packages-dev": [],
