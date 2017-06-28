@@ -69,12 +69,18 @@ class FetchICS implements \Module\Module {
             $entry->addChild("updated", date("c", strtotime(@$event['LAST-MODIFIED'])));
             $entry->addChild("start", date("c", strtotime(@$event['DTSTART'])));
             $entry->addChild("end", date("c", strtotime(@$event['DTEND'])));
-            $entry->addChild("title", @$event['SUMMARY']);
-            $entry->addChild("content", $this->getFriendlyDescription(strtotime($event['DTSTART']), strtotime($event['DTEND']), @$event['LOCATION']));
-            $entry->addChild("summary", $this->getFriendlyDescription(strtotime($event['DTSTART']), strtotime($event['DTEND']), @$event['LOCATION']));
+            $entry->addChild("title", $this->unescape(@$event['SUMMARY']));
+            $entry->addChild("content", $this->getFriendlyDescription(strtotime($event['DTSTART']), strtotime
+            ($event['DTEND']), $this->unescape(@$event['LOCATION'])));
+            $entry->addChild("summary", $this->getFriendlyDescription(strtotime($event['DTSTART']), strtotime
+            ($event['DTEND']), $this->unescape(@$event['LOCATION'])));
         }
         
         return $xml;
+    }
+    
+    private function unescape($original) {
+        return str_replace("\,", ",", $original);
     }
     
     private function getFriendlyDescription($start, $end, $location) {
